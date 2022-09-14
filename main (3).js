@@ -6,6 +6,8 @@ let total = 0;
 let mayoriaEdad=true;
 let askAgain = true;
 
+const filtrado = new Array();
+
 class Club
 {
   constructor(id, tipo, nombre, precio)
@@ -30,9 +32,18 @@ const club =
   new Club (9, "bailable", "Black Velvet", 3400) 
 ] 
   
+const busquedaNombres = function(strTipo)
+{
+    const resultado = club.filter(clb => clb.tipo==strTipo);
+
+    const nombre = resultado.map(filtrado => filtrado.nombre);
+
+    console.log(nombre);
+
+    return nombre.join(' ');
+}
 
 
-//logica  
 
 console.log();
 
@@ -97,35 +108,9 @@ do
     break;
   }
 
-
-  /*
-  if(experiencia.toLowerCase()=="pub" || experiencia.toLowerCase()=="bailable")
-  {
-    askAgain = false;
-
-    if (experiencia == "pub")
-    {
-      alert("los mejores lugares para vivir la experiencia club tipo pub  son: " + club[1].nombre + club[4].nombre + club[6].nombre + club[7].nombre );      
-    } 
-    else
-    {
-      alert("los mejores lugares para vivir la experiencia bailable son:" + club[0].nombre + club[2].nombre + club[3].nombre + club[5].nombre + club[8].nombre )
-    } 
-
-  }
-  else 
-  {
-    alert("Volvé a ingresar una opción válida");
-  }
-  */
-
 } while (askAgain);
 
 
-//fin logica
-
-
-//funciones
 function saludo() 
 {
   console.log("Hola! bienvenidx a nuestra agenda nocturna!");
@@ -152,41 +137,3 @@ function sumar(precioTicket, precioParking)
   return precioTicket + precioParking;
 }
 
-function busquedaNombres(strTipo)
-{ 
-
-  let strConcat="";
-  
-  //version con For (la clasica)
-  for (let i = 0; i < club.length; i++) 
-  {
-    if( club[i].tipo==strTipo)
-    {
-      strConcat+=" "+club[i].nombre;
-    }
-  }
-
-  //con for in (bueno para recorrer objetos, sin numerar)
- /* for(let key in club)
-  {
-    if( club[key].tipo==strTipo)
-    {
-      strConcat+=" "+club[key].nombre;
-    }
-  }
-
-
-  //con for of (bueno para recorrer objetos enumerados)
-  for(let value of club)
-  {
-    if( value.tipo==strTipo)
-    {
-      strConcat+=" "+value.nombre;
-    }
-  }*/
-
-  return strConcat;
-
-}
-
-//fin funciones
