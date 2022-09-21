@@ -17,7 +17,7 @@ const comprobarEdad = () => {
   } while (isNaN(edad));
 
   if (edad < 18) {
-    listaBoliches.innerHTML = "No podes pasar";
+    listaBoliches.innerHTML = "No contas con los requisitos para poder ingresar";
   } else if (edad >= 18) {
     listaBoliches.innerHTML =
       ' <p>"Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal." </p>';
@@ -31,6 +31,9 @@ const sumar = (precioTicket, precioParking) => {
 const cuantoGastar = () => {
   let total = 0;
   let askAgain = true;
+  let debajoDosmil = document.getElementById("debajoDosmil");
+
+
   do {
     precioTicket = parseInt(
       prompt("Cuanto está dispuesto a gastar en la entrada al lugar?")
@@ -44,13 +47,13 @@ const cuantoGastar = () => {
       askAgain = false;
 
       if (total < 2000) {
-        alert(
-          " los lugares para salir por debajo de los 2000 pesos son: La Luciernaga, Baby Baby, El Faro, Inmortal."
-        );
+        debajoDosmil.innerHTML = 'Los lugares para salir por debajo de los 2000 pesos son: La Luciernaga, Baby Baby, El Faro, Inmortal.';
+          
+        
       } else if (total >= 2000) {
-        alert(
-          "Por ese rango de precio podes salir a todos esos lugares: Diosa, El Agujero, Sunshine, Black Velvet, Red Point"
-        );
+        
+        debajoDosmil.innerHTML = 'Por ese rango de precio podes salir a todos esos lugares: Diosa, El Agujero, Sunshine, Black Velvet, Red Point';
+        
       }
     }
   } while (askAgain);
