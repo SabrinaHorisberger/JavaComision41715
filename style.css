@@ -1,0 +1,10 @@
+.body{
+    background-color: black;
+    
+}
+.tipografia{
+    margin: 3px;
+    font-size: large;
+    color: #50D821;
+    font-family: 'Montserrat', sans-serif;
+}

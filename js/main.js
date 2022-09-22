@@ -69,22 +69,25 @@ const busquedaNombres = function (strTipo) {
 };
 
 const tipoDeExperiencia = () => {
-  alert("Ahora veamos que tipo de experiencia estas buscando");
   let askAgain = true;
+  let experiencia = document.getElementById('experiencia');
+  experiencia.innerHTML ='Ahora veamos que tipo de experiencia estas buscando:';
+  
   do {
+    let experienciaElegida = document.getElementById('experienciaElegida');
+
     let experiencia = prompt("Elige: pub o bailable?");
 
     switch (experiencia.toLowerCase()) {
       case "bailable":
       case "pub":
         askAgain = false;
-
-        alert(
-          "los mejores lugares para vivir la experiencia tipo " +
+        
+            experienciaElegida.innerHTML = "Los mejores lugares para vivir la experiencia tipo " +
             experiencia.toLowerCase() +
-            " son:" +
+            " son:" + "" +
             busquedaNombres(experiencia.toLowerCase())
-        );
+      
         break;
 
       default:
