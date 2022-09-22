@@ -1,18 +1,17 @@
 
-/*const preguntarNombre2 = document.getElementById ('preguntarNombre2')
-preguntarNombre2.addEventListener('input', () => {
-console.log (preguntarNombre2.value);
-  
-})
+const devolverNombre = () =>{
+  const input1 = document.getElementById("preguntarNombre2");
+  input1.addEventListener("change", (e)=>{
+    let nombre = e.target.value;
+    let titulo = document.getElementById("saludo2");
+    if(nombre.lenght !== 0){
+      titulo.innerText = "Que bueno tenerte por aquí, " + nombre;
+    } 
+  });
+};
 
- /*const preguntarNombre = input1.addEventListener('change', (e) =>{
- const nombreIngresado = e.target.value;
-  return nombreIngresado;
-  console.log(e.target.value)
 
-});*/
-
-const preguntarNombre = () => {
+/*const preguntarNombre = () => {
   const nombreIngresado = prompt("Ingrese su nombre: ");
   return nombreIngresado;
 };
@@ -20,7 +19,7 @@ const preguntarNombre = () => {
 const saludar = () => {
   let titulo = document.getElementById("saludo2");
   titulo.innerText = "Que bueno tenerte por aquí, " + preguntarNombre();
-};
+};*/
 
 const comprobarEdad = () => {
   let edad;
@@ -37,7 +36,8 @@ const comprobarEdad = () => {
     listaBoliches.innerHTML =
       ' <p>"Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal." </p>';
   }
-};
+}
+;
 
 const sumar = (precioTicket, precioParking) => {
   return precioTicket + precioParking;
@@ -112,7 +112,7 @@ const tipoDeExperiencia = () => {
   } while (askAgain);
 };
 
-saludar();
+devolverNombre();
 comprobarEdad();
 cuantoGastar();
 tipoDeExperiencia();
