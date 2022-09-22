@@ -1,3 +1,17 @@
+
+/*const preguntarNombre2 = document.getElementById ('preguntarNombre2')
+preguntarNombre2.addEventListener('input', () => {
+console.log (preguntarNombre2.value);
+  
+})
+
+ /*const preguntarNombre = input1.addEventListener('change', (e) =>{
+ const nombreIngresado = e.target.value;
+  return nombreIngresado;
+  console.log(e.target.value)
+
+});*/
+
 const preguntarNombre = () => {
   const nombreIngresado = prompt("Ingrese su nombre: ");
   return nombreIngresado;
@@ -18,6 +32,7 @@ const comprobarEdad = () => {
 
   if (edad < 18) {
     listaBoliches.innerHTML = "No contas con los requisitos para poder ingresar";
+    
   } else if (edad >= 18) {
     listaBoliches.innerHTML =
       ' <p>"Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal." </p>';
