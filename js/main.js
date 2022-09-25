@@ -1,5 +1,5 @@
 
-const devolverNombre = () =>{
+ const devolverNombre = () =>{
   const input1 = document.getElementById("preguntarNombre2");
   input1.addEventListener("change", (e)=>{
     let nombre = e.target.value;
@@ -11,35 +11,31 @@ const devolverNombre = () =>{
 };
 
 
-/*const preguntarNombre = () => {
-  const nombreIngresado = prompt("Ingrese su nombre: ");
-  return nombreIngresado;
+
+  let listaBoliches = document.getElementById("listaBoliches");
+  let edad;
+   const comprobarEdad = () => {
+   const input2 = document.getElementById( "edades")
+   input2.addEventListener("change", (e)=>{
+    let edad = e.target.value;
+    console.log(edad)
+    if (edad < 18) {
+      listaBoliches.innerHTML = "No contas con los requisitos para poder ingresar";
+      
+    } else if (edad >= 18) {
+      listaBoliches.innerHTML =
+        ' <p>"Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal." </p>';
+    }
+  ;
+   });
 };
 
-const saludar = () => {
-  let titulo = document.getElementById("saludo2");
-  titulo.innerText = "Que bueno tenerte por aquí, " + preguntarNombre();
-};*/
+ 
 
-const comprobarEdad = () => {
-  let edad;
-  let listaBoliches = document.getElementById("listaBoliches");
 
-  do {
-    edad = parseInt(prompt("Ingrese su edad: "));
-  } while (isNaN(edad));
 
-  if (edad < 18) {
-    listaBoliches.innerHTML = "No contas con los requisitos para poder ingresar";
-    
-  } else if (edad >= 18) {
-    listaBoliches.innerHTML =
-      ' <p>"Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal." </p>';
-  }
-}
-;
 
-const sumar = (precioTicket, precioParking) => {
+/*const sumar = (precioTicket, precioParking) => {
   return precioTicket + precioParking;
 };
 
@@ -110,7 +106,7 @@ const tipoDeExperiencia = () => {
         break;
     }
   } while (askAgain);
-};
+};*/
 
 devolverNombre();
 comprobarEdad();
