@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  
+<head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css" />
+
+</head>
+ 
   <body class="body">
-    <div id="Saludo" class="tipografia">
-      <h1>AGENDA NOCTURNA DE BUENOS AIRES</h1>
-      <p> Hola! bienvenidx a nuestra agenda nocturna!</p>
-      <p> Ingresa tu nombre:</p>
-      <p id ="saludo2"></p>
-    </div>
-    <input type="text" id="preguntarNombre2" >
-    <p class="tipografia"> Ingresa tu edad:</p>
-    <input type="number" id="edades">
-    <p class="tipografia"> Cuanto está dispuesto a gastar en la entrada al lugar?:</p>
-    <input type="number" id="gastoEntrada" >
-    <p class="tipografia"> Y en aparcar su auto?:</p>
-    <input type="number" id="gastoParking" >
-    <p class="tipografia"> Ahora veamos que tipo de experiencia estas buscando:</p>
-    <input type="text" id="tipoExperiencia" >
-    <div id ="listaBoliches" class="tipografia"></div >
-    <div id = "debajoDosmil" class="tipografia"></div>
-    <div id ="experiencia"  class="tipografia"></div>
-    <div id ="experienciaElegida" class="tipografia"></div>
+      <button id="botonDarkMode" class="btn btn-dark"> Party mode </button><br><br>
+      <button id="botonLightMode" class="btn btn-light"> Take it easy mode</button>
+
+     <br><br><br>
+
+     <div id="Saludo">
+        <h1>AGENDA NOCTURNA DE BUENOS AIRES</h1><br><br>
+        <p> Hola! bienvenidx a nuestra agenda nocturna!</p><br>
+        <p> Ingresa tu nombre:</p>
+        <p id ="saludo2"></p>
+     </div>
+    
+     <input type="text" id="preguntarNombre2" ><br><br>
+
+     <p> Ingresa tu edad:</p>
+     <input type="number" id="edades"><br><br>
+     
+     <p> Cuanto está dispuesto a gastar en la entrada al lugar?:</p>
+     <input type="number" id="gastoEntrada" ><br><br>
+    
+     <p> Y en aparcar su auto?:</p>
+     <input type="number" id="gastoParking" ><br><br>
+
+     <p> Ahora veamos que tipo de experiencia estas buscando: pub o bailable?</p>
+     <input type="text" id="tipoExperiencia" ><br><br>
+    
+     <div id ="listaBoliches"></div >
+
+     <div id = "debajoDosmil"></div>
+
+     <div id ="experiencia"></div>
+
+     <div id ="experienciaElegida"></div>
 
 
     <script src="./js/data.js"></script>
     <script src="./js/main.js"></script>
+
   </body>
+
 </html>

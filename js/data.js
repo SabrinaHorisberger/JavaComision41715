@@ -7,6 +7,8 @@ class Club {
   }
 }
 
+
+
 const club = [
   new Club(1, "bailable", "Diosa", 1000),
   new Club(2, "pub", "El Agujero", 2000),
@@ -18,3 +20,15 @@ const club = [
   new Club(8, "pub", "Inmortal", 1800),
   new Club(9, "bailable", "Black Velvet", 3400),
 ];
+
+
+/*const enJSON = JSON.stringify(Club);
+//console.log(enJSON);
+
+localStorage.setItem('Club', enJSON);
+
+const clubs =  JSON.parse(localStorage.getItem('Club'));
+console.log(clubs);*/
+
+
+  
