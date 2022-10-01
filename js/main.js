@@ -94,7 +94,7 @@ const cuantoGastar = () => {
 const filtrado = new Array();
 
 const busquedaNombres = function (strTipo) {
-  const resultado = club.filter((clb) => clb.tipo == strTipo);
+  const resultado = clubs.filter((clb) => clb.tipo == strTipo);
   const nombre = resultado.map((filtrado) => filtrado.nombre);
   console.log(nombre);
   return nombre.join(" ");
