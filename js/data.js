@@ -25,4 +25,6 @@ const clubs = [club1, club2, club3, club4, club5, club6, club7, club8, club9]
 
 localStorage.setItem('clubs',JSON.stringify(clubs));
 
+console.log(JSON.parse(localStorage.getItem('clubs')));
+
   
