@@ -6,7 +6,23 @@ const checkearEdad = () =>{
 let edad;
 
 const botonDarkMode = document.getElementById('botonDarkMode');
+botonDarkMode.addEventListener('click', () =>{
+  Swal.fire({
+    icon: 'success',
+    title: 'party mode activado!',
+    text: '♪ ♬ ─=≡Σ((( つ•̀ω•́)つLET’SGO! ♬ ♪',
+    timer: 1400,
+  })
+})
 const botonLightMode = document.getElementById('botonLightMode');
+botonLightMode.addEventListener('click', () =>{
+  Swal.fire({
+    icon: 'success',
+    title: 'take it easy mode activado!',
+    text: '(⌣_⌣”)',
+    timer: 1400
+  })
+})
 
 let darkMode
 
@@ -62,7 +78,7 @@ const comprobarEdad = () => {
         "No contas con los requisitos para poder ingresar";
     } else if (edad >= 18) {
       listaBoliches.innerHTML =
-        ' <p>Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal. </p>';
+        `Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal +  ${clubs.nombre}` ;
     }
   });
 };
@@ -111,6 +127,9 @@ input5.addEventListener("change", (e) => {
       do {
         let experiencias = document.getElementById("experienciaElegida");
         console.log(experiencias);
+
+        //console.log(experiencias?.nombre || "esa experiencia no existe");
+
 
         switch (experiencia.toLowerCase()) {
           case "bailable":
