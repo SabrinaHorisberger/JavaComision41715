@@ -3,6 +3,22 @@ const checkearEdad = () =>{
 }
 
 
+const getSumaDeNombres = (listaDeNombres) =>{
+  let sumaDeLosNombres = ""
+
+  for(let boliche of listaDeNombres){
+    const {nombre} = boliche 
+    
+    if(sumaDeLosNombres === ""){
+      sumaDeLosNombres = nombre
+    }else{
+      sumaDeLosNombres += ", " + nombre
+    }
+  }
+  return sumaDeLosNombres
+}
+
+
 let edad;
 
 const botonDarkMode = document.getElementById('botonDarkMode');
@@ -11,7 +27,7 @@ botonDarkMode.addEventListener('click', () =>{
     icon: 'success',
     title: 'party mode activado!',
     text: '♪ ♬ ─=≡Σ((( つ•̀ω•́)つLET’SGO! ♬ ♪',
-    timer: 1400,
+    timer: 2400,
   })
 })
 const botonLightMode = document.getElementById('botonLightMode');
@@ -20,7 +36,7 @@ botonLightMode.addEventListener('click', () =>{
     icon: 'success',
     title: 'take it easy mode activado!',
     text: '(⌣_⌣”)',
-    timer: 1400
+    timer: 2400
   })
 })
 
@@ -78,7 +94,7 @@ const comprobarEdad = () => {
         "No contas con los requisitos para poder ingresar";
     } else if (edad >= 18) {
       listaBoliches.innerHTML =
-        `Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: Diosa, El Agujero, Sunshine, Black Velvet, Red Point, Baby baby, La Luciernaga, El Faro, Inmortal +  ${clubs.nombre}` ;
+        `Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: ${getSumaDeNombres(clubs)} ` ;
     }
   });
 };
@@ -90,18 +106,18 @@ const sumar = (gastoEntrada, gastoParking) => {
 
 const cuantoGastar = () => {
   if(checkearEdad()){
-    let debajoDosmil = document.getElementById("debajoDosmil");
+    const textoFiltrador = document.getElementById("debajoDosmil");
     const input3 = document.getElementById("gastoEntrada").value;
     const input4 = document.getElementById("gastoParking").value;
     let total = sumar(input3, input4);
+
+    //filtro de precio disuesto a gastar
+    const bolichesFiltrados = clubs.filter((boliche) => boliche.precio <= total )
+
     console.log(total);
-    if (total < 2000) {
-      debajoDosmil.innerHTML =
-        ' <p> "Los lugares para salir por debajo de los 2000 pesos son: La Luciernaga, Baby Baby, El Faro, Inmortal." <p>';
-    } else if (total >= 2000) {
-      debajoDosmil.innerHTML =
-        "Por ese rango de precio podes salir a todos esos lugares: Diosa, El Agujero, Sunshine, Black Velvet, Red Point";
-    }
+
+    textoFiltrador.innerHTML = `<p> Los lugares para salir por debajo de los ${total} pesos son: ${getSumaDeNombres(bolichesFiltrados)} <p>`
+
   }else{
     alert("No tienes edad suficiente")
   }
