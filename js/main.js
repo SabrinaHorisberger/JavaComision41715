@@ -1,3 +1,10 @@
+
+setTimeout(()=>{
+  Swal.fire('Que bueno tenerte por aquí!')
+
+},0);
+
+
 const checkearEdad = () =>{
   return edad >= 18 || edad === undefined
 }
@@ -66,17 +73,21 @@ botonLightMode.addEventListener('click', () =>{
   const input1 = document.getElementById("preguntarNombre2");
 
   input1.addEventListener("change", (e) => {
-    if(checkearEdad()){
+    if (checkearEdad()) {
       let nombre = e.target.value;
       let titulo = document.getElementById("saludo2");
       if (nombre.lenght !== 0) {
         titulo.innerText = "Que bueno tenerte por aquí, " + nombre;
       }
-    }else{
-    alert("No tienes edad suficiente")
-  }
-});
-
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "No contas con la edad suficiente para ingresar",
+        text: "(¬_¬'')ԅ(￣ε￣ԅ)",
+        timer: 3000,
+      });
+    }
+  });
 
 
 let listaBoliches = document.getElementById("listaBoliches");
@@ -90,11 +101,38 @@ const comprobarEdad = () => {
     edad = e.target.value;
     console.log(edad);
     if (edad < 18) {
+      Swal.fire({
+        icon: "error",
+        title: "No contas con la edad suficiente para ingresar",
+        text: "(¬_¬'')ԅ(￣ε￣ԅ)",
+        timer: 3000,
+      });
       listaBoliches.innerHTML =
         "No contas con los requisitos para poder ingresar";
     } else if (edad >= 18) {
-      listaBoliches.innerHTML =
-        `Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: ${getSumaDeNombres(clubs)} ` ;
+
+
+  const lista = document.getElementById('listado');
+  
+  fetch ('./clubes.json')
+        .then( (response) => response.json())
+        .then( (data) => {
+                data.forEach((club) =>{
+                const li =document.createElement ('li');
+                li.innerHTML = 
+                           `<p>${club.nombre}<p>
+                            
+                            `
+                     lista.appendChild(li);   
+                })
+
+        
+              })     
+
+      
+      
+      //listaBoliches.innerHTML =
+       // `Bienvenido! Los Clubs nocturnos que participan de nuestra agenda son: ${getSumaDeNombres(clubs)} ` ;
     }
   });
 };
@@ -119,10 +157,14 @@ const cuantoGastar = () => {
     textoFiltrador.innerHTML = `<p> Los lugares para salir por debajo de los ${total} pesos son: ${getSumaDeNombres(bolichesFiltrados)} <p>`
 
   }else{
-    alert("No tienes edad suficiente")
-  }
+    Swal.fire({
+      icon: "error",
+      title: "No contas con la edad suficiente para ingresar",
+      text: "(¬_¬'')ԅ(￣ε￣ԅ)",
+      timer: 3000,
+    });
 };
-
+}
 const filtrado = new Array();
 
 const busquedaNombres = function (strTipo) {
@@ -166,10 +208,32 @@ input5.addEventListener("change", (e) => {
         }
       } while (askAgain);
     }else{
-      alert("No tienes edad suficiente")
+      Swal.fire({
+        icon: "error",
+        title: "No contas con la edad suficiente para ingresar",
+        text: "(¬_¬'')ԅ(￣ε￣ԅ)",
+        timer: 3000,
+      });
     }
 });
 
 document
   .getElementById("gastoParking")
   .addEventListener("change", cuantoGastar);
+
+  /*const lista = document.getElementById('listado');
+  
+  fetch ('./clubes.json')
+        .then( (response) => response.json())
+        .then( (data) => {
+                data.forEach((club) =>{
+                const li =document.createElement ('li');
+                li.innerHTML = 
+                           `<p>${club.nombre}<p>
+                            
+                            `
+                     lista.appendChild(li);   
+                })
+
+        
+              }) */    

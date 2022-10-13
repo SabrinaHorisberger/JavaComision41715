@@ -7,10 +7,7 @@ class Club {
   }
 }
 
-
-
-
-  const club1 = new Club(1, "bailable", "Diosa", 1000)
+  const club1 = new Club(1, "bailable", "Diosa", 1000,)
   const club2 = new Club(2, "pub", "El Agujero", 2000)
   const club3 = new Club(3, "bailable", "Red Point", 3500)
   const club4 = new Club(4, "bailable", "La Luciernaga", 1200)

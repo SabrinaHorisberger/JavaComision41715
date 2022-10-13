@@ -1,0 +1,22 @@
+[
+
+{"id":1, "tipo":"bailable","nombre": "Diosa", "precio": 1000},
+{"id":2, "tipo":"pub","nombre": "El Agujero", "precio": 2000},
+{"id":3, "tipo":"bailable","nombre": "Red Point", "precio": 3500},
+{"id":4, "tipo":"bailable","nombre": "La Luciernaga", "precio": 1200},
+{"id":5, "tipo":"pub","nombre": "Sunshine", "precio": 4000},
+{"id":6, "tipo":"bailable","nombre": "Baby baby", "precio": 2600},
+{"id":7, "tipo":"pub","nombre": "El faro", "precio": 1300},
+{"id":8, "tipo":"pub","nombre": "Inmortal", "precio": 1800},
+{"id":9, "tipo":"bailable","nombre": "black Velvet", "precio": 3400},
+{"id":10, "tipo":"bailable","nombre": "Tiger", "precio": 1000},
+{"id":11, "tipo":"pub","nombre": "Sky", "precio": 2000},
+{"id":12, "tipo":"bailable","nombre": "return", "precio": 3500},
+{"id":13, "tipo":"bailable","nombre": "Heeelll", "precio": 1900},
+{"id":14, "tipo":"pub","nombre": "Tamarindo", "precio": 5000},
+{"id":15, "tipo":"bailable","nombre": "arcano", "precio": 2600},
+{"id":16, "tipo":"pub","nombre": "astral", "precio": 1300},
+{"id":17, "tipo":"pub","nombre": "white", "precio": 1500},
+{"id":18, "tipo":"bailable","nombre": "vainilla", "precio": 3400}
+
+]
